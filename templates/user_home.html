@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <title>Home</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='app.css')}}">
+    </head>
+    <body>
+        {% include "user_navi.html" %}
+        {% with msg_data = get_flashed_messages() %}
+            {% if msg_data %}
+                <center><h4><span style="color: red;">{{ msg_data[0] }}</span></h4></center>
+            {% elif user_data %}
+            <div class="viewbalance">
+            <center>
+                <h1>Avalaible Balance</h1>
+                <h2>&#8377; {{user_data['bal']}}</h2>
+            </center>
+            </div>
+            {% endif %}
+            {% if transaction_data %}
+            <div class="Transaction" style="overflow-x:auto;">
+                <table id="Transaction">
+                    <tr>
+                        <th>Sr.No.</th>
+                        <th>Transaction Id</th>
+                        <th>Transaction Date / Time</th>
+                        <th>Transaction With</th>
+                        <th>Transaction Type</th>
+                        <th>Transaction Amount</th>
+                    </tr>
+                {% for row in transaction_data %}
+                    <tr>
+                        <td>{{ loop.index }}</td>
+                        {% for data in row %}
+                            {% if "credit"==data %}    
+                                <td style="color: green;">{{ data }}</td>
+                            {% elif "debit"==data %}
+                                <td style="color: red;">{{ data }}</td>
+                            {% else %}
+                                <td>{{ data }}</td>
+                            {% endif %}
+                        {% endfor %}
+                    </tr>
+                {% endfor %}
+                </table>
+            </div>
+            {% endif %}
+        {% endwith %}
+        {% include "footer.html" %}
+    </body>
+</html>

@@ -1,0 +1,162 @@
+* {box-sizing: border-box}
+
+/* Full-width input fields */
+  input[type=text], input[type=password], input[type=number] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+/* Set a style for all buttons */
+button {
+  background-color: rgb(13, 155, 155);
+  color: white;
+  font-size: medium;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+button:hover {
+  opacity:1;
+}
+
+/* Extra styles for the cancel button */
+/* .cancelbtn {
+  padding: 14px 20px;
+  background-color: #f44336;
+} */
+
+/* Float cancel and signup buttons and add an equal width */
+.signupbtn {
+    /* float: left; */
+    
+    width: 100%;
+}
+
+/* The "Forgot password" text */
+span.psw {
+    float: right;
+    padding-top: 16px;
+  }
+
+/* Add a blue text color to links */
+a {
+    color: dodgerblue;
+  }
+
+/* Set a grey background color and center the text of the "sign in" section */
+.signin {
+    /* background-color: #f1f1f1; */
+    text-align: center;
+  }
+
+/* Add padding to container elements */
+/* .container {
+    margin-top: 2%;
+    margin-bottom: 2%;
+    margin-left: 33%;
+    margin-right: 33%;
+} */
+
+.signup_container{
+    margin-top: 2%;
+    margin-bottom: 2%;
+    margin-left: 33%;
+    margin-right: 33%;
+}
+
+.login_container{
+    margin-top: 5%;
+    margin-bottom: 5%;
+    margin-left: 33%;
+    margin-right: 33%;
+}
+.transaction_container{
+  margin: 5%;
+}
+
+/* Clear floats */
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+  /* Create two equal columns that floats next to each other */
+  .column {
+    float: left;
+    border: 10px solid rgb(255, 255, 255);
+    border-collapse: collapse;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    margin-left: 1%;
+    margin-right: 1%;
+    /* box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19); */
+    /* background-color: rgba(54, 54, 54, 0.212); */
+    height: auto; /* Should be removed. Only for demonstration */
+  }
+
+  .column:hover{
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  }
+  
+  .leftcol, .middlecol {
+    width: 27%;
+  }
+  
+  .rightcol {
+    width: 40%;
+  }
+
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  .send_amt, .acc_no {
+    float: left;
+    width: 50%;
+  }
+  .send_amt{
+    padding-left: 2%;
+  }
+  
+
+
+/* Change styles for cancel button and signup button on extra small screens */
+@media screen and (max-width: 300px) {
+  .signupbtn {
+    width: 100%;
+  }
+  span.psw {
+    display: block;
+    float: none;
+  }
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+  }
+}

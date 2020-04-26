@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <title>Home</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='app.css')}}">
+    </head>
+    <body>
+        {% include "header.html" %}
+        <div class="home">
+        <center><h1>Home Page</h1></center>
+        {% with msg_data = get_flashed_messages() %}
+            {% if msg_data %}
+            <center><h4><snap style="color:green">{{msg_data[0]}}</snap></h4></center>
+            <!-- <center><h4>Hello Mr./Mrs. <span style="color:#1abc9c;font-size: 15pt;">{{msg_data['fname']}} {{msg_data['lname']}}</span> , You are Successfully Register! Your Account No. is <span style="color:#1abc9c;font-size:15pt;">{{msg_data['acc']}}</span>. Now you are ready for login.</h4></center> -->
+            {% endif %}
+        {% endwith %}
+        </div>
+        {% include "footer.html" %}
+    </body>
+</html>
